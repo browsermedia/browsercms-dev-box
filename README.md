@@ -1,10 +1,10 @@
-# A Virtual Machine for Ruby on Rails Core Development
+# A Virtual Machine for BrowserCMS Core Development
 
 ## Introduction
 
-This project automates the setup of a development environment for working on Ruby on Rails itself. Use this virtual machine to work on a pull request with everything ready to hack and run the test suites.
+This project automates the setup of a development environment for working on BrowserCMS projects themselves. Use this virtual machine to work on a pull request with everything ready to hack and run the test suites.
 
-Please note this virtual machine is not designed to be used for Rails application development.
+This can also be used for developing on BrowserCMS projects.
 
 ## Requirements
 
@@ -16,8 +16,8 @@ Please note this virtual machine is not designed to be used for Rails applicatio
 
 Building the virtual machine is this easy:
 
-    host $ git clone https://github.com/rails/rails-dev-box.git
-    host $ cd rails-dev-box
+    host $ git clone https://github.com/browsermedia/browsercms-dev-box
+    host $ cd browsercms-dev-box
     host $ vagrant up
 
 That's it.
@@ -27,7 +27,7 @@ If the base box is not present that command fetches it first. The setup itself t
     host $ vagrant ssh
     Welcome to Ubuntu 12.04 LTS (GNU/Linux 3.2.0-23-generic-pae i686)
     ...
-    vagrant@rails-dev-box:~$
+    vagrant@browsercms-dev-box:~$
 
 Port 3000 in the host computer is forwarded to port 3000 in the virtual machine. Thus, applications running in the virtual machine can be accessed via localhost:3000 in the host computer.
 
@@ -59,21 +59,21 @@ The recommended workflow is
 
 * test within the virtual machine.
 
-Just clone your Rails fork into the rails-dev-box directory on the host computer:
+Just clone your Rails fork into the browsercms-dev-box directory on the host computer:
 
     host $ ls
     README.md   Vagrantfile puppet
-    host $ git clone git@github.com:<your username>/rails.git
+    host $ git clone git@github.com:<your username>/browsercms.git
 
 Vagrant mounts that directory as _/vagrant_ within the virtual machine:
 
-    vagrant@rails-dev-box:~$ ls /vagrant
-    puppet  rails  README.md  Vagrantfile
+    vagrant@browsercms-dev-box:~$ ls /vagrant
+    puppet  browsercms  README.md  Vagrantfile
 
 Install gem dependencies in there:
 
-    vagrant@rails-dev-box:~$ cd /vagrant/rails
-    vagrant@rails-dev-box:/vagrant/rails$ bundle
+    vagrant@browsercms-dev-box:~$ cd /vagrant/browsercms
+    vagrant@browsercms-dev-box:/vagrant/browsercms$ bundle
 
 We are ready to go to edit in the host, and test in the virtual machine.
 
